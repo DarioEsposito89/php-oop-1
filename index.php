@@ -5,13 +5,13 @@ require_once __DIR__ . "/genre.php";
 $movies = [
     new Movie("https://m.media-amazon.com/images/I/51AP5MY2B5L._AC_UF894,1000_QL80_.jpg", 
     "Rocky", 
-    ["drammatico, azione, sportivo"], 
+    ["Drammatico, Azione, Sportivo"], 
     119, 
     "John G. Avildsen",),
 
     new Movie("https://m.media-amazon.com/images/I/51DZpY7tfoL._AC_UF1000,1000_QL80_.jpg",
     "Pulp Fiction", 
-    ["thriller, azione, gangster"], 
+    ["Thriller, Azione, Gangster"], 
     150, 
     "Quentin Tarantino"),
 ];
@@ -46,7 +46,7 @@ $movies = [
                             <p class="fs-3 fw-bold text-center text-white"> <?= $movie-> title; ?> </p>
                             <p class="fs-4 mt-1 fw-bold"> Regista:<?php echo $movie-> director; ?> </p>
                             <?php foreach($movie-> genres as $genre ) { ?>
-                            <p class="fs-6"> <?php echo ucfirst($genre); ?> </p>
+                            <p class="fs-6"> <?php echo ($genre); ?> </p>
                             <?php } ?>
                             <p class="fs-4"> Durata:<?php echo $movie-> duration; ?> minuti </p>
                         </div>
