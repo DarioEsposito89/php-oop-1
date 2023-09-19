@@ -4,13 +4,13 @@ require_once __DIR__ . "/genre.php";
 
 $movies = [
     new Movie("https://m.media-amazon.com/images/I/51AP5MY2B5L._AC_UF894,1000_QL80_.jpg", 
-    "Moonlight", 
+    "Rocky", 
     ["drammatico, azione, sportivo"], 
     119, 
     "John G. Avildsen",),
 
     new Movie("https://m.media-amazon.com/images/I/51DZpY7tfoL._AC_UF1000,1000_QL80_.jpg",
-    "Inception", 
+    "Pulp Fiction", 
     ["thriller, azione, gangster"], 
     150, 
     "Quentin Tarantino"),
