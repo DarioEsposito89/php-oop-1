@@ -1,5 +1,20 @@
 <?php
+require_once __DIR__ . "/classes/movie.php";
+require_once __DIR__ . "/genre.php";
 
+$movies = [
+    new Movie("https://m.media-amazon.com/images/I/51AP5MY2B5L._AC_UF894,1000_QL80_.jpg", 
+    "Moonlight", 
+    ["drammatico, azione, sportivo"], 
+    119, 
+    "John G. Avildsen",),
+
+    new Movie("https://m.media-amazon.com/images/I/51DZpY7tfoL._AC_UF1000,1000_QL80_.jpg",
+    "Inception", 
+    ["thriller, azione, gangster"], 
+    150, 
+    "Quentin Tarantino"),
+];
 
 ?>
 
@@ -19,7 +34,28 @@
 </head>
 
 <body style="background-color: rgb(38, 50, 79);">
-    
+<div id="app">
+        <main>
+            <div class="container d-flex jusify-content-center">
+            <h1 class="text-white">Film da vedere:</h1> 
+                <div class="row row-cols-4 d-flex gap-5 justify-content-center p-5">
+                <?php foreach($movies as $movie) { ?>
+                    <div class="card my-2 p-2" style="background-color: rgb(68, 107, 199); width: 350px;">
+                        <img :src="<?php echo $movie-> imgcover; ?>" alt="Immagine del film" srcset="" class="card-img-top">
+                        <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                            <p class="fs-3 fw-bold text-center text-white"> <?= $movie-> title; ?> </p>
+                            <p class="fs-4 mt-1 fw-bold"> Regista:<?php echo $movie-> director; ?> </p>
+                            <?php foreach($movie-> genres as $genre ) { ?>
+                            <p class="fs-6"> <?php echo ucfirst($genre); ?> </p>
+                            <?php } ?>
+                            <p class="fs-4"> Durata:<?php echo $movie-> duration; ?> minuti </p>
+                        </div>
+                    </div>
+                <?php } ?>
+                </div>
+            </div>
+        </main>
+    </div>
     <script src="./script.js"></script>
 </body>
 
