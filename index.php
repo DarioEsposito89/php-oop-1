@@ -40,19 +40,22 @@ $movies = [
             <h1 class="text-white">Film da vedere:</h1> 
 
                 <div class="row row-cols-4 d-flex gap-5 justify-content-center p-5">
+                <!-- ciclo foreach che stampa elementi di Movie nelle card -->
                 <?php foreach($movies as $movie) { ?>
                     <div class="card my-2 p-2" style="background-color: rgb(68, 107, 199); width: 350px;">
-
-                        <img :src="<?php echo $movie-> imgcover; ?>" alt="Immagine del film" srcset="" class="card-img-top">
+                        <!-- Immagine delle card -->
+                        <img src="<?php echo $movie->getImage(); ?>" alt="Immagine del film" srcset="" class="card-img-top">
                         <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                            <p class="fs-3 fw-bold text-center text-white"> <?= $movie-> title; ?> </p>
-                            <p class="fs-4 mt-1 fw-bold"> Regista:<?php echo $movie-> director; ?> </p>
-
-                            <?php foreach($movie-> genres as $genre ) { ?>
+                            <!-- titolo -->
+                            <p class="fs-3 fw-bold text-center text-white"> <?= $movie->title; ?> </p>
+                            <!-- regista -->
+                            <p class="fs-4 mt-1 fw-bold"> Regista:<?php echo $movie->director; ?> </p>
+                            <!-- ciclo foreach per stampare più generi dall'array genre -->
+                            <?php foreach($movie->genres as $genre ) { ?>
                             <p class="fs-6"> <?php echo ($genre); ?> </p>
                             <?php } ?>
-
-                            <p class="fs-4"> Durata:<?php echo $movie-> duration; ?> minuti </p>
+                            <!-- durata -->
+                            <p class="fs-4"> Durata:<?php echo $movie->duration; ?> minuti </p>
                         </div>
                     </div>
                 <?php } ?>
