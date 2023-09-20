@@ -3,17 +3,19 @@ require_once __DIR__ . "/classes/movie.php";
 require_once __DIR__ . "/genre.php";
 
 $movies = [
-    new Movie("https://m.media-amazon.com/images/I/51AP5MY2B5L._AC_UF894,1000_QL80_.jpg", 
-    "Rocky", 
-    ["Drammatico", "Azione", "Sportivo"], 
-    119, 
-    "John G. Avildsen",),
+    new Movie(
+    _imgcover: "https://m.media-amazon.com/images/I/51AP5MY2B5L._AC_UF894,1000_QL80_.jpg", 
+    _title: "Rocky", 
+    _genre: ["Drammatico", "Azione", "Sportivo"], 
+    _duration: 119, 
+    _director: "John G. Avildsen",),
 
-    new Movie("https://m.media-amazon.com/images/I/51DZpY7tfoL._AC_UF1000,1000_QL80_.jpg",
-    "Pulp Fiction", 
-    ["Thriller", "Azione", "Gangster"], 
-    150, 
-    "Quentin Tarantino"),
+    new Movie(
+    _imgcover: "https://m.media-amazon.com/images/I/51DZpY7tfoL._AC_UF1000,1000_QL80_.jpg",
+    _title: "Pulp Fiction", 
+    _genre: ["Thriller", "Azione", "Gangster"], 
+    _duration: 150, 
+    _director: "Quentin Tarantino"),
 ];
 
 ?>
